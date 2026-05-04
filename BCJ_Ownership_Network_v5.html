@@ -793,20 +793,22 @@ body.view-network .network-view { display: block; }
 }
 
 .network-edge {
-  stroke: var(--border-strong);
+  stroke: rgba(232, 181, 84, 0.35);
   stroke-width: 1.5px;
   fill: none;
-  opacity: 0.5;
+  opacity: 0.7;
+  stroke-dasharray: 4 3;
 }
 
 .network-edge-label {
   fill: var(--accent-amber);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
+  font-size: 8.5px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   pointer-events: none;
   text-anchor: middle;
+  dominant-baseline: middle;
 }
 
 footer.foot {
@@ -2242,8 +2244,8 @@ const DATA = {
       how: "S.A.C. Capital / Point72 hedge fund wealth (~$23B net worth).",
       connections: [
         { to: "cohen-steve", rel: "controlled by", since: "2020", detail: "Cohen owns ~97% of Mets; also major investor and board member at Collectors Holdings (PSA parent)", source: "Public record" },
-        { to: "collectors-holdings", rel: "owner is also board member and investor in", since: "2021", detail: "Cohen Private Ventures holds equity and board seat at PSA parent", source: "Collectors Holdings take-private 2021" },
-        { to: "mlb-league", rel: "member franchise of", since: "1962", detail: "NL East division", source: "MLB" }
+        { to: "collectors", rel: "owner is also board member and investor in", since: "2021", detail: "Cohen Private Ventures holds equity and board seat at PSA parent", source: "Collectors Holdings take-private 2021" },
+        { to: "mlb", rel: "member franchise of", since: "1962", detail: "NL East division", source: "MLB" }
       ]
     },
     {
@@ -2262,8 +2264,8 @@ const DATA = {
       how: "Kendrick's software/technology background wealth. Group assembled 2004.",
       connections: [
         { to: "kendrick-ken", rel: "controlled by", since: "2004", detail: "Managing GP since 2004; also investor in Collectors Holdings", source: "Public record" },
-        { to: "collectors-holdings", rel: "owner is also investor in", since: "2021", detail: "Kendrick was part of the 2021 take-private group", source: "Collectors Holdings take-private 2021" },
-        { to: "mlb-league", rel: "member franchise of", since: "1998", detail: "NL West division", source: "MLB" }
+        { to: "collectors", rel: "owner is also investor in", since: "2021", detail: "Kendrick was part of the 2021 take-private group", source: "Collectors Holdings take-private 2021" },
+        { to: "mlb", rel: "member franchise of", since: "1998", detail: "NL West division", source: "MLB" }
       ]
     },
     {
@@ -2320,7 +2322,7 @@ const DATA = {
       connections: [
         { to: "walter-mark", rel: "controlled by via GBM", since: "2012", detail: "$2.15B acquisition; 3 World Series (2020, 2024, 2025)", source: "Public record" },
         { to: "arctos-partners", rel: "Arctos holds minority LP stake", since: "2022", detail: "One of six Arctos MLB investments", source: "Sportico March 2022" },
-        { to: "mlb-league", rel: "member franchise of", since: "1883", detail: "NL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1883", detail: "NL West division", source: "MLB" }
       ]
     },
     {
@@ -2994,13 +2996,13 @@ const DATA = {
       why: "The only firm pre-approved across all five NA leagues, creating a near-monopoly on institutional sports PE — a regulatory moat that took years to build and cannot be easily replicated. The KKR acquisition dramatically increases the capital behind this footprint. Arctos's six MLB investments are specifically the six highest-value franchises, concentrating influence over baseball's most financially powerful clubs.",
       how: "Raised capital through a sports-focused PE structure, securing league approvals individually. MLB allows funds to own up to 15% of a team; teams can sell up to 30% to PE. No MLB cap on number of teams a single fund can hold.",
       connections: [
-        { to: "la-dodgers", rel: "minority stake in", since: "2022", detail: "Among the six Arctos MLB investments", source: "Sportico March 2022" },
+        { to: "dodgers", rel: "minority stake in", since: "2022", detail: "Among the six Arctos MLB investments", source: "Sportico March 2022" },
         { to: "boston-red-sox", rel: "minority stake in (via FSG)", since: "2021", detail: "Investment made at Fenway Sports Group level", source: "Sportico March 2022" },
         { to: "chicago-cubs", rel: "minority stake in", since: "2022", detail: "Among the six Arctos MLB investments", source: "Sportico March 2022" },
         { to: "san-francisco-giants", rel: "minority stake in", since: "2022", detail: "Among the six Arctos MLB investments; Giants also have separate Sixth Street 10% stake (2025)", source: "Sportico March 2022" },
         { to: "houston-astros", rel: "minority stake in", since: "2022", detail: "Among the six Arctos MLB investments", source: "Sportico March 2022" },
         { to: "san-diego-padres", rel: "minority stake in", since: "2022", detail: "Among the six Arctos MLB investments", source: "Sportico March 2022" },
-        { to: "mlb-league", rel: "cross-franchise investor in", since: "2019", detail: "Approved by MLB for unlimited multi-team ownership", source: "Public reporting" }
+        { to: "mlb", rel: "cross-franchise investor in", since: "2019", detail: "Approved by MLB for unlimited multi-team ownership", source: "Public reporting" }
       ]
     },
 
@@ -3105,7 +3107,7 @@ const DATA = {
         { to: "steinbrenner-hal", rel: "controlled by", since: "2008", detail: "Hal became chairman 2008; full control after Hank's death 2020", source: "Public record" },
         { to: "new-york-yankees", rel: "owns", since: "1973", detail: "Yankees purchased from CBS by George Steinbrenner for $8.8M net in 1973", source: "Public record" },
         { to: "legends-global", rel: "co-founder and minority owner of", since: "2008", detail: "YGE co-founded Legends with Cowboys in 2008; retains minority after Sixth Street buyout", source: "Sportico" },
-        { to: "mlb-league", rel: "member franchise owner of", since: "1973", detail: "Yankees have been in YGE/Steinbrenner hands since 1973", source: "Public record" }
+        { to: "mlb", rel: "member franchise owner of", since: "1973", detail: "Yankees have been in YGE/Steinbrenner hands since 1973", source: "Public record" }
       ]
     },
 
@@ -3125,7 +3127,7 @@ const DATA = {
       how: "Liberty Media (Liberty's SiriusXM/F1 holding company) received the Braves as a strategic acquisition from Time Warner. Separation from Liberty's tracking stock into standalone public company executed July 2023.",
       connections: [
         { to: "atlanta-braves", rel: "owns", since: "2007", detail: "Acquired from Time Warner/Ted Turner via Liberty Media; independent public company since 2023", source: "SEC filings / public record" },
-        { to: "mlb-league", rel: "member franchise owner of", since: "2007", detail: "Liberty Media / Braves Holdings continuity since Turner ownership", source: "Public record" }
+        { to: "mlb", rel: "member franchise owner of", since: "2007", detail: "Liberty Media / Braves Holdings continuity since Turner ownership", source: "Public record" }
       ]
     },
 
@@ -3166,7 +3168,7 @@ const DATA = {
       how: "Leveraged Carlyle's co-founder wealth and investment banking network to assemble the winning bid for the Angelos family's team. The Angelos family (Peter Angelos died March 2023) needed to resolve estate and control questions.",
       connections: [
         { to: "baltimore-orioles", rel: "principal owner of", since: "2024", detail: "Acquired from Angelos family for $1.725B, closed March 2024", source: "ESPN / Sportico" },
-        { to: "mlb-league", rel: "ownership stake in via franchise", since: "2024", detail: "All MLB owners hold indirect equity in league through franchise membership", source: "MLB structure" }
+        { to: "mlb", rel: "ownership stake in via franchise", since: "2024", detail: "All MLB owners hold indirect equity in league through franchise membership", source: "MLB structure" }
       ]
     },
 
@@ -3226,7 +3228,7 @@ const DATA = {
       how: "Self-made fortune in residential homebuilding, leveraged into sports ownership at $1.7B price — a 26% premium to Forbes's 2025 Rays valuation, reflecting expected stadium value uplift.",
       connections: [
         { to: "tampa-bay-rays", rel: "principal owner and MLB Control Person of", since: "2025", detail: "Acquisition closed September 30, 2025 for ~$1.7B", source: "Sportico / Jacksonville Today Sept 2025" },
-        { to: "mlb-league", rel: "franchise ownership of", since: "2025", detail: "Unanimously approved by MLB owners September 22, 2025", source: "Sportico" }
+        { to: "mlb", rel: "franchise ownership of", since: "2025", detail: "Unanimously approved by MLB owners September 22, 2025", source: "Sportico" }
       ]
     },
 
@@ -3456,7 +3458,7 @@ const DATA = {
       why: "Walter and Boehly's investment relationship — partnered on both the Dodgers and Chelsea — is the kind of cross-sport, cross-continent ownership connection that defines elite sports capital in the 2020s. Their relationship also connects Walter to Boehly's Eldridge Industries portfolio (which has extensive entertainment, sports, and private credit investments documented in the Epstein files at the institutional-adjacency level).",
       how: "Guggenheim Partners' asset management fees and investment returns provided the capital base. The Dodgers acquisition was structured as a consortium of high-net-worth investors under GBM's umbrella.",
       connections: [
-        { to: "la-dodgers", rel: "principal owner of via GBM", since: "2012", detail: "$2.15B acquisition (world record at time); 3 World Series (2020, 2024, 2025)", source: "Public record" },
+        { to: "dodgers", rel: "principal owner of via GBM", since: "2012", detail: "$2.15B acquisition (world record at time); 3 World Series (2020, 2024, 2025)", source: "Public record" },
         { to: "arctos-partners", rel: "sold minority LP stake to", since: "2022", detail: "Arctos holds minority stake as part of their six MLB investments", source: "Sportico March 2022" }
       ]
     },
@@ -3672,7 +3674,7 @@ const DATA = {
       how: "Rubenstein-led investment group outbid competitors for the Angelos estate.",
       connections: [
         { to: "rubenstein-david", rel: "controlled by", since: "2024", detail: "Rubenstein leads ownership group", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1954", detail: "AL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1954", detail: "AL East division", source: "MLB" }
       ]
     },
 
@@ -3695,7 +3697,7 @@ const DATA = {
         { to: "fenway-sports-group", rel: "owned by", since: "2002", detail: "FSG is the holding parent of Red Sox", source: "Public record" },
         { to: "arctos-partners", rel: "minority PE investor in (via FSG)", since: "2021", detail: "Arctos LP at FSG level", source: "Sportico March 2022" },
         { to: "redbird-capital", rel: "PE investor in (via FSG)", since: "2021", detail: "RedBird backed FSG's Penguins acquisition with FSG stake", source: "Public reporting" },
-        { to: "mlb-league", rel: "member franchise of", since: "1901", detail: "AL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1901", detail: "AL East division", source: "MLB" }
       ]
     },
 
@@ -3717,7 +3719,7 @@ const DATA = {
         { to: "steinbrenner-hal", rel: "controlled by", since: "2008", detail: "Hal Steinbrenner is YGE chairman and managing general partner", source: "Public record" },
         { to: "yankee-global-enterprises", rel: "owned by", since: "1973", detail: "YGE is the holding entity since 2004 LLC formation", source: "Public record" },
         { to: "legends-global", rel: "co-founded / uses for commerce operations", since: "2008", detail: "YGE and Cowboys announced Legends joint venture October 20, 2008", source: "Legends founding" },
-        { to: "mlb-league", rel: "member franchise of", since: "1901", detail: "AL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1901", detail: "AL East division", source: "MLB" }
       ]
     },
 
@@ -3737,7 +3739,7 @@ const DATA = {
       how: "Zalupski's Dream Finders Homes wealth (NYSE: DFH, Fortune 1000) funded the acquisition.",
       connections: [
         { to: "zalupski-patrick", rel: "controlled by", since: "2025", detail: "Acquisition closed September 30, 2025 for ~$1.7B", source: "Sportico / Jax Daily Record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1998", detail: "AL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1998", detail: "AL East division", source: "MLB" }
       ]
     },
 
@@ -3757,7 +3759,7 @@ const DATA = {
       how: "Rogers Communications corporate acquisition using telecom company balance sheet.",
       connections: [
         { to: "rogers-edward-iii", rel: "controlled by family of", since: "2000", detail: "Rogers family controls Rogers Communications which owns 100% of Jays", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1977", detail: "AL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1977", detail: "AL East division", source: "MLB" }
       ]
     },
 
@@ -3777,7 +3779,7 @@ const DATA = {
       how: "Reinsdorf purchased using real estate wealth. Ishbia succession via structured purchase framework (Shore Capital Partners / UWM family wealth).",
       connections: [
         { to: "reinsdorf-jerry", rel: "controlled by", since: "1981", detail: "Reinsdorf has been chairman since 1981; Ishbia succession path from 2029", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1900", detail: "AL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1900", detail: "AL Central division", source: "MLB" }
       ]
     },
 
@@ -3797,7 +3799,7 @@ const DATA = {
       how: "Dolan family purchase 2000 for $323M from Dick Jacobs.",
       connections: [
         { to: "dolan-paul", rel: "controlled by", since: "2000", detail: "Lawrence purchased 2000; Paul designated primary MLB controller 2013", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1894", detail: "AL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1894", detail: "AL Central division", source: "MLB" }
       ]
     },
 
@@ -3817,7 +3819,7 @@ const DATA = {
       how: "Little Caesars Pizza global chain wealth.",
       connections: [
         { to: "ilitch-christopher", rel: "controlled by", since: "2017", detail: "Christopher took over after Mike Ilitch died February 2017", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1894", detail: "AL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1894", detail: "AL Central division", source: "MLB" }
       ]
     },
 
@@ -3837,7 +3839,7 @@ const DATA = {
       how: "Sherman: Legg Mason investment management exit ($1.4B). Mahomes LP: athlete diversification investment.",
       connections: [
         { to: "sherman-john", rel: "controlled by", since: "2019", detail: "Purchased November 2019 for $1B from David Glass; Mahomes minority LP", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1969", detail: "AL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1969", detail: "AL Central division", source: "MLB" }
       ]
     },
 
@@ -3857,7 +3859,7 @@ const DATA = {
       how: "Carl Pohlad's banking empire (Marquette Bank network) funded the 1984 purchase.",
       connections: [
         { to: "pohlad-jim", rel: "controlled by", since: "1984", detail: "Carl purchased 1984; Jim principal owner since Carl's death 2009; sale exploration since October 2024", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1901", detail: "AL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1901", detail: "AL Central division", source: "MLB" }
       ]
     },
 
@@ -3878,7 +3880,7 @@ const DATA = {
       connections: [
         { to: "crane-jim", rel: "controlled by", since: "2011", detail: "Crane purchased November 2011 for $680M", source: "Public record" },
         { to: "arctos-partners", rel: "Arctos holds minority LP stake", since: "2022", detail: "One of six Arctos MLB investments", source: "Sportico March 2022" },
-        { to: "mlb-league", rel: "member franchise of", since: "1962", detail: "AL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1962", detail: "AL West division", source: "MLB" }
       ]
     },
 
@@ -3898,7 +3900,7 @@ const DATA = {
       how: "Moreno's Outdoor Systems billboard empire, sold to Infinity Broadcasting for ~$8B in 1999.",
       connections: [
         { to: "moreno-arte", rel: "controlled by", since: "2003", detail: "Purchased from Disney for $183M in 2003; first Hispanic MLB principal owner", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1961", detail: "AL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1961", detail: "AL West division", source: "MLB" }
       ]
     },
 
@@ -3918,7 +3920,7 @@ const DATA = {
       how: "Gap Inc. founder's heir (parents Donald and Doris Fisher).",
       connections: [
         { to: "fisher-john", rel: "controlled by", since: "2005", detail: "Purchased 2005; relocating from Oakland → Sacramento (temp) → Las Vegas (2028)", source: "Public record / ESPN" },
-        { to: "mlb-league", rel: "member franchise of", since: "1901", detail: "AL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1901", detail: "AL West division", source: "MLB" }
       ]
     },
 
@@ -3938,7 +3940,7 @@ const DATA = {
       how: "Stanton's VoiceStream Wireless (sold to Deutsche Telekom for $50.7B, creating T-Mobile) provided the wealth for ownership.",
       connections: [
         { to: "stanton-john", rel: "controlling owner of via First Avenue Entertainment", since: "2016", detail: "Took majority control when Nintendo reduced to 10%; Nintendo retains 10%", source: "ESPN / public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1977", detail: "AL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1977", detail: "AL West division", source: "MLB" }
       ]
     },
 
@@ -3959,7 +3961,7 @@ const DATA = {
       connections: [
         { to: "davis-ray", rel: "majority owner of via Rangers Baseball Express", since: "2010", detail: "Co-owns with Bob Simpson; Sportsology LP 2025; Cade Cunningham LP Feb 2026", source: "Public record" },
         { to: "sportsology-capital", rel: "minority LP from", since: "2025", detail: "One of first non-Arctos institutional MLB LP transactions", source: "Sportico March 2026" },
-        { to: "mlb-league", rel: "member franchise of", since: "1961", detail: "AL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1961", detail: "AL West division", source: "MLB" }
       ]
     },
 
@@ -3979,7 +3981,7 @@ const DATA = {
       how: "Ted Turner built franchise; sold to Time Warner, which sold to Liberty Media 2007. John Malone's Liberty Media / Liberty SiriusXM structure separated Braves into independent public entity 2023.",
       connections: [
         { to: "atlanta-braves-holdings", rel: "owned by", since: "2007", detail: "Liberty Media origin; independent public company July 2023 (NASDAQ: BATRA)", source: "SEC filings / public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1871", detail: "NL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1871", detail: "NL East division", source: "MLB" }
       ]
     },
 
@@ -3999,7 +4001,7 @@ const DATA = {
       how: "Sherman's Florida investment management wealth.",
       connections: [
         { to: "sherman-bruce", rel: "principal owner of", since: "2017", detail: "Purchased with Derek Jeter for $1.2B; Jeter departed 2022", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1993", detail: "NL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1993", detail: "NL East division", source: "MLB" }
       ]
     },
 
@@ -4019,7 +4021,7 @@ const DATA = {
       how: "John Middleton Co. tobacco business sold to Altria 2007 for ~$2.9B.",
       connections: [
         { to: "middleton-john", rel: "controlled by", since: "2016", detail: "Controlling owner since 2016; minority since 1994. Bryce Harper and Trea Turner deals", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1883", detail: "NL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1883", detail: "NL East division", source: "MLB" }
       ]
     },
 
@@ -4039,7 +4041,7 @@ const DATA = {
       how: "Lerner Enterprises D.C.-area real estate empire wealth.",
       connections: [
         { to: "lerner-mark", rel: "controlled by", since: "2006", detail: "Lerner family purchased for $450M in 2006; confirmed keeping team 2024", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1969", detail: "NL East division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1969", detail: "NL East division", source: "MLB" }
       ]
     },
 
@@ -4060,7 +4062,7 @@ const DATA = {
       connections: [
         { to: "ricketts-tom", rel: "controlled by", since: "2009", detail: "Purchased for $845M including Wrigley Field real estate", source: "Public record" },
         { to: "arctos-partners", rel: "Arctos holds minority LP stake", since: "2022", detail: "One of six Arctos MLB investments", source: "Sportico March 2022" },
-        { to: "mlb-league", rel: "member franchise of", since: "1876", detail: "NL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1876", detail: "NL Central division", source: "MLB" }
       ]
     },
 
@@ -4080,7 +4082,7 @@ const DATA = {
       how: "Castellini Group cold storage / fresh produce distribution wealth.",
       connections: [
         { to: "castellini-bob", rel: "controlled by", since: "2006", detail: "Purchased from Carl Lindner Jr. family", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1881", detail: "NL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1881", detail: "NL Central division", source: "MLB" }
       ]
     },
 
@@ -4100,7 +4102,7 @@ const DATA = {
       how: "Crescent Capital Group (alternative credit / private debt, $50B+ AUM) wealth.",
       connections: [
         { to: "attanasio-mark", rel: "controlled by", since: "2005", detail: "Purchased for $223M from Selig family; Giannis Antetokounmpo LP since 2021", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1969", detail: "NL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1969", detail: "NL Central division", source: "MLB" }
       ]
     },
 
@@ -4120,7 +4122,7 @@ const DATA = {
       how: "Ogden Newspapers (regional newspaper chain) wealth.",
       connections: [
         { to: "nutting-bob", rel: "controlled by", since: "2007", detail: "Minority owner 1996; principal owner January 2007", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1882", detail: "NL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1882", detail: "NL Central division", source: "MLB" }
       ]
     },
 
@@ -4140,7 +4142,7 @@ const DATA = {
       how: "Third-generation baseball lineage wealth; acquired Cardinals from Anheuser-Busch corporate divestiture.",
       connections: [
         { to: "dewitt-bill-jr", rel: "controlled by", since: "1996", detail: "Purchased from Anheuser-Busch; 2 World Series (2006, 2011); DeWitt also invests in US Playing Card Company", source: "Public record / The Richest" },
-        { to: "mlb-league", rel: "member franchise of", since: "1882", detail: "NL Central division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1882", detail: "NL Central division", source: "MLB" }
       ]
     },
 
@@ -4160,7 +4162,7 @@ const DATA = {
       how: "Monfort of Colorado beef-packing sold to ConAgra in 1987 for ~$365M, creating the generational wealth.",
       connections: [
         { to: "monfort-dick", rel: "controlled by", since: "2005", detail: "Dick and Charlie Monfort; ConAgra meatpacking inheritance", source: "Public record" },
-        { to: "mlb-league", rel: "member franchise of", since: "1993", detail: "NL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1993", detail: "NL West division", source: "MLB" }
       ]
     },
 
@@ -4180,7 +4182,7 @@ const DATA = {
       how: "Peter Seidler's Seidler family wealth (investment management background) funded the acquisition.",
       connections: [
         { to: "arctos-partners", rel: "Arctos holds minority LP stake", since: "2022", detail: "One of six Arctos MLB investments; team now for sale", source: "Sportico March 2022" },
-        { to: "mlb-league", rel: "member franchise of", since: "1969", detail: "NL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1969", detail: "NL West division", source: "MLB" }
       ]
     },
 
@@ -4202,7 +4204,7 @@ const DATA = {
         { to: "johnson-charles-b", rel: "principal owner of", since: "1993", detail: "Johnson family long-term ownership; Larry Baer president/CEO also in ownership group", source: "Public record" },
         { to: "arctos-partners", rel: "Arctos holds minority LP stake", since: "2022", detail: "One of six Arctos MLB investments", source: "Sportico March 2022" },
         { to: "sixth-street-partners", rel: "Sixth Street holds 10% equity stake", since: "2025", detail: "First non-Arctos institutional MLB LP deal alongside Rangers/Sportsology", source: "Sportico March 2026" },
-        { to: "mlb-league", rel: "member franchise of", since: "1883", detail: "NL West division", source: "MLB" }
+        { to: "mlb", rel: "member franchise of", since: "1883", detail: "NL West division", source: "MLB" }
       ]
     }
 
@@ -4710,36 +4712,48 @@ function renderNetwork() {
     return e.to !== center.id;
   });
 
-  const cx = 500, cy = 350;
-  const radius = Math.min(280, 60 + edges.length * 8);
+  const cx = 500, cy = 345;
+  const centerR = 62;
+  const outerR  = 44;
+  // Radius: generous minimum so outer nodes never crowd the center
+  const radius = Math.max(240, 120 + edges.length * 18);
 
   let html = '';
 
-  // edges
+  // Draw edges FIRST (underneath nodes)
   edges.forEach((edge, i) => {
     const angle = (i / edges.length) * 2 * Math.PI - Math.PI / 2;
     const x = cx + radius * Math.cos(angle);
     const y = cy + radius * Math.sin(angle);
 
-    // Curved line for visual interest
-    const midX = (cx + x) / 2;
-    const midY = (cy + y) / 2;
+    // Start from center circle edge, end at outer circle edge
+    const sx = cx + (centerR + 4) * Math.cos(angle);
+    const sy = cy + (centerR + 4) * Math.sin(angle);
+    const ex = x  - (outerR  + 4) * Math.cos(angle);
+    const ey = y  - (outerR  + 4) * Math.sin(angle);
 
-    html += `<path class="network-edge" d="M ${cx} ${cy} Q ${midX} ${midY} ${x} ${y}"/>`;
+    html += `<line class="network-edge" x1="${sx}" y1="${sy}" x2="${ex}" y2="${ey}"/>`;
 
-    // Edge label
-    const labelX = cx + (radius * 0.55) * Math.cos(angle);
-    const labelY = cy + (radius * 0.55) * Math.sin(angle);
-    const truncatedRel = edge.rel.length > 22 ? edge.rel.substring(0, 22) + "…" : edge.rel;
-    html += `<text class="network-edge-label" x="${labelX}" y="${labelY}">${truncatedRel}</text>`;
+    // Label at 68% of the way from center to outer node — well clear of both circles
+    const labelX = cx + (radius * 0.68) * Math.cos(angle);
+    const labelY = cy + (radius * 0.68) * Math.sin(angle);
+    const truncatedRel = edge.rel.length > 20 ? edge.rel.substring(0, 20) + "…" : edge.rel;
+    const labelW = truncatedRel.length * 5.8 + 10;
+
+    // Background rect for readability
+    html += `<rect
+      x="${labelX - labelW/2}" y="${labelY - 9}"
+      width="${labelW}" height="14" rx="3"
+      fill="rgba(8,18,32,0.82)" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>`;
+    html += `<text class="network-edge-label" x="${labelX}" y="${labelY + 1}">${truncatedRel}</text>`;
   });
 
-  // Center node
+  // Center node (drawn after edges so it sits on top)
   const centerColor = typeColor(center.type);
   html += `
     <g class="network-node center" data-id="${center.id}">
-      <circle cx="${cx}" cy="${cy}" r="56" fill="${centerColor}" stroke="#e8b554" stroke-width="3"/>
-      ${wrapText(center.name, cx, cy, 110)}
+      <circle cx="${cx}" cy="${cy}" r="${centerR}" fill="${centerColor}" stroke="#e8b554" stroke-width="3"/>
+      ${wrapText(center.name, cx, cy, centerR * 1.8)}
     </g>
   `;
 
@@ -4753,8 +4767,8 @@ function renderNetwork() {
     const color = typeColor(target.type);
     html += `
       <g class="network-node" data-id="${target.id}">
-        <circle cx="${x}" cy="${y}" r="38" fill="${color}" fill-opacity="0.85" stroke="${color}" stroke-width="2"/>
-        ${wrapText(target.name, x, y, 70)}
+        <circle cx="${x}" cy="${y}" r="${outerR}" fill="${color}" fill-opacity="0.88" stroke="${color}" stroke-width="2"/>
+        ${wrapText(target.name, x, y, outerR * 1.85)}
       </g>
     `;
   });
@@ -4907,7 +4921,7 @@ const ENTITY_META = {
 // Key format: "entity_id:target_id"
 const CONNECTION_META = {
   // ---- Arctos LP stakes (minority, undisclosed %, league max 15%) ----
-  "arctos-partners:la-dodgers":    { tier: "documented", stake_pct: "undisclosed (<15%)", ownership_type: "minority-lp" },
+  "arctos-partners:dodgers":    { tier: "documented", stake_pct: "undisclosed (<15%)", ownership_type: "minority-lp" },
   "arctos-partners:dodgers":       { tier: "documented", stake_pct: "undisclosed (<15%)", ownership_type: "minority-lp" },
   "arctos-partners:boston-red-sox":{ tier: "documented", stake_pct: "undisclosed (<15%)", ownership_type: "minority-lp" },
   "arctos-partners:chicago-cubs":  { tier: "documented", stake_pct: "undisclosed (<15%)", ownership_type: "minority-lp" },
@@ -4939,7 +4953,7 @@ const CONNECTION_META = {
 
   // ---- Epstein adjacency tiers ----
   "rubenstein-david:baltimore-orioles": { tier: "documented", stake_pct: "controlling", ownership_type: "controlling" },
-  "walter-mark:la-dodgers": { tier: "documented", stake_pct: "controlling (GBM)", ownership_type: "controlling" },
+  "walter-mark:dodgers": { tier: "documented", stake_pct: "controlling (GBM)", ownership_type: "controlling" },
   "walter-mark:dodgers":    { tier: "documented", stake_pct: "controlling (GBM)", ownership_type: "controlling" },
 
   // ---- Former connections ----
